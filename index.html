@@ -1,230 +1,154 @@
 <!DOCTYPE html>
 <html>
 
-<head lang="pt-br">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>BootstrapCDN</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="slideshow.css">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+<header id="cabecalho"></header>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <nav>
+    <object width="100%" height="250px" data="menu.html"></object>
+  </nav>
 </head>
 
-<body>
+</header>
 
-  <!-- Slide 12 -->
-  <div class="container">
-    <h1>My First Bootstrap Page</h1>
-    <p>This is some text.</p>
-  </div>
+<main>
 
+  <div class="slideshow-container">
 
-
-  <!-- Slide 13 -->
-  <!-- Comments
-  <div class="container-fluid">
-    <h1>My First Bootstrap Page</h1>
-    <p>This is some text.</p>
-  </div>
-  -->
-
-
-
-
-  <!-- Ex1: Control the column width, and how they should appear on different devices -->
-  <!-- Slide 16 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-4">DIV 1</div>
-      <div class="col-xl-4">DIV 2</div>
-      <div class="col-xl-4">DIV 3</div>
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/A.png?raw=true" style="width:100%">
     </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/B.jpg?raw=true" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/C.jpg?raw=true" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 4</div>
+      <h1 class='centro'>
+        Conheça os desafios da inovação
+      </h1>
+      <iframe class='centro' width="860" height="615" src="https://www.youtube.com/embed/5g5LQe3m8Po"
+      <iframe class='centro' width="560" height="315" src="https://www.youtube.com/embed/5g5LQe3m8Po"
+        title="Desafio de Inovação: webinar com executivos da empresa Sem Parar e representantes da Inova IFSP"></iframe>
+  </section>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot" onclick="currentSlide(4)"></span> 
+    </div>
+
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+
+
+  <div class="grid">
+    <div class="item">
+        <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/eleicoes.jpg?raw=true" class=""/>
+
+        <h3>Radar IFSP: informe-se sobre as eleições no dia 13 de outubro</h3>
+        <p>Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu câmpus</p>
+    </div>
+
+    <div class="item">
+        <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/snct.jpg?raw=true" class=""/>
+
+        <h3>IFSP: SNCT reúne atividades entre 19 e 24 de outubro</h3>
+        <p>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
+    </div>
+
+    <div class="item">
+        <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/residencia.png?raw=true" class=""/>
+
+        <h3>IFSP oferece bolsa aos voluntários da Residência Pedagógica</h3>
+        <p>Bolsa de R$ 400,00 será paga pelo período de três meses</p>
+    </div>
+
+    <div class="item">
+        <img src="https://github.com/pwe-redes/pwe_imagens/blob/master/maratona.jpeg?raw=true" class=""/>
+
+        <h3>Inscrições abertas para a III Maratona InterIF</h3>
+        <p>Maratona de programação do IFSP será realizada online, no dia 31 de outubro; Inscrições até 26 de outubro</p>
+    </div>
+</div>
+
+
+
+
+
+  <section>
+    <h1 class='centro'>
+      Conheça os desafios da inovação
+    </h1>
+    <iframe class='centro' width="560" height="315" src="https://www.youtube.com/embed/5g5LQe3m8Po"
+      title="Desafio de Inovação: webinar com executivos da empresa Sem Parar e representantes da Inova IFSP"></iframe>
+  </section>
+
+</main>
+
+<footer>
+  <br><br>
+  <div id="my_menu" align="left">
+    <a href="#cabecalho"><img src="https://github.com/pwe-redes/pwe_imagens/blob/master/MoveTop.png?raw=true" width="41"
+        height="43" title="Mover para o topo" alt="Mover para o topo"></a> |
+    <a href="https://www.facebook.com/ifsppirituba"><img
+        src="https://github.com/pwe-redes/pwe_imagens/blob/master/facebook.png?raw=true" width="41" height="43"
+        title="IFSP Facebook" alt="IFSP Facebook"></a>
   </div>
-  -->
+  <p>
+    IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
+    2504-0100
 
-  <!-- Ex2: Or let Bootstrap automatically handle the layout -->
-  <!-- Slide 16 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col">DIV 1</div>
-      <div class="col">DIV 2</div>
-      <div class="col">DIV 3</div>
-    </div>
-  </div>
-  -->
+  </p>
+</footer>
 
-  <!-- Slide 19 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-      <div class="col-sm-3">.col-sm-3</div>
-    </div>
-  </div>
-  -->
+<script src="./Menu/header-component.js"></script>
 
-  <!-- Slide 20 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">.col-sm-4</div>
-      <div class="col-sm-8">.col-sm-8</div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 21 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col">1 de 3</div>
-      <div class="col-md-auto">Conteúdo com largura variável</div>
-      <div class="col">3 de 3</div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 22 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row">
-      <div class="col">col</div>
-      <div class="col">col</div>
-      <div class="w-100"></div>
-      <div class="col">col</div>
-      <div class="col">col</div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 23 -->
-  <!-- Comments
-  <div class="container">
-    <div style="height:100vh; widget:100vh; border: 1px solid black;" class="row align-items-top">
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 24 -->
-  <!-- Comments
-  <div class="container">
-    <div style="height:100vh; widget:100vh; border: 1px solid black;" class="row align-items-center">
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 25 -->
-  <!-- Comments
-  <div class="container">
-    <div style="height:100vh; widget:100vh; border: 1px solid black;" class="row align-items-end">
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-      <div class="col">
-        Uma de três colunas
-      </div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 27 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row justify-content-start">
-      <div class="col-4">Uma de duas colunas</div>
-      <div class="col-4">Uma de duas colunas</div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-4">Uma de duas colunas</div>
-      <div class="col-4">Uma de duas colunas</div>
-    </div>
-    <div class="row justify-content-end">
-      <div class="col-4">Uma de duas colunas</div>
-      <div class="col-4">Uma de duas colunas</div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 29 -->
-  <!-- Comments
-  <div class="container">
-    <div class="row justify-content-around">
-      <div class="col-4" style="border: 1px solid black;">
-        Uma de duas colunas
-      </div>
-      <div class="col-4" style="border: 1px solid black;">
-        Uma de duas colunas
-      </div>
-    </div>
-    <div class="row justify-content-between">
-      <div class="col-4" style="border: 1px solid black;">
-        Uma de duas colunas
-      </div>
-      <div class="col-4" style="border: 1px solid black;">
-        Uma de duas colunas
-      </div>
-    </div>
-  </div>
-  -->
-
-  <!-- Slide 29 -->
-  <!-- Comments
-  <div class="row">
-    <div class="col-9">.col-9</div>
-    <div class="col-4">.col-4<br>Já que 9 + 4 é maior que 12, esta div de quatro colunas pula para essa nova linha.</div>
-    <div class="col-6">.col-6<br>Colunas subsequentes pulam junto para a nova linha.</div>
-  </div>
-  -->
-
-
-
-
-
-
-
-
-
-
-
-  <script src="script.js"></script>
 </body>
-
-</html>
